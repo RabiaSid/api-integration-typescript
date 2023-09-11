@@ -17,7 +17,18 @@ export default function AppProduct() {
       .get(`${baseAPI}`)
       .then((res) => {
         setPost([...res.data]);
-        console.log([...res.data]);
+        console.log("Succesfully --get all data " , [...res.data]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const deletePost = (id: any) => {
+    axios
+      .delete(`${baseAPI}/${id}`)
+      .then((res) => {
+        console.log("Succesfully card --delete");
       })
       .catch((err) => {
         console.log(err);
@@ -66,6 +77,7 @@ export default function AppProduct() {
             onEditClick={() => {
               navigate(`product-form/${x.id}`)}
             } 
+            onDeleteClick={() => deletePost(x.id)}
             // onEditClick={updatepost} 
             />
           </Grid>

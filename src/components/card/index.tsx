@@ -9,6 +9,7 @@ import Button from "../button";
 type CardProps = {
   onClick?: (...args: any[]) => any;
   onEditClick?: (...args: any[]) => any;
+  onDeleteClick?: (...args: any[]) => any;
   name: string;
   email: string;
   body: string;
@@ -24,7 +25,7 @@ const bull = (
 );
 
 export default function CustomizedCard(props: CardProps) {
-  const { name, email, body, onClick, onEditClick } = props;
+  const { name, email, body, onClick, onEditClick, onDeleteClick } = props;
 
   return (
     <Card sx={{ minWidth: 275, background: "#ebeeef" }} onClick={onClick}>
@@ -39,7 +40,7 @@ export default function CustomizedCard(props: CardProps) {
       </CardContent>
       <CardActions>
         <Button color="primary" variant="outlined" label="Edit" onClick={onEditClick}/>
-        <Button color="primary" variant="outlined" label="Delete" />
+        <Button color="primary" variant="outlined" label="Delete" onClick={onDeleteClick}/>
       </CardActions>
     </Card>
   );

@@ -17,7 +17,7 @@ export default function ProductForm() {
   const getPostById = () => {
     axios(`${baseAPI}/${params.id}`)
       .then((res) => {
-        console.log({ ...res.data });
+        console.log("Succesfully --get Single data " , { ...res.data });
       })
       .catch((err) => {
         console.log(err);
@@ -31,7 +31,7 @@ export default function ProductForm() {
       .post(baseAPI, post)
       .then((res) => {
         // setPost({ ...res.data });
-        console.log("Add New Post Successfully", res.data);
+        console.log("Successfully Add New --Post", res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -44,7 +44,7 @@ export default function ProductForm() {
       .put(`${baseAPI}/${params.id}`, post)
       .then((res) => {
         setPost({ ...res.data });
-        // console.log("Add New Post Successfully", res.data);
+        console.log(" Successfully Edit(--put) New Post", { ...res.data });
       })
       .catch((err) => {
         console.log(err);
