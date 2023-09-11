@@ -9,6 +9,7 @@ export default function AppRouter() {
     <Routes>
         <Route path='/' element={<AppProduct />}/>
         <Route path='product-form' element={<ProductForm />}/>
+        <Route path='product-form/:id' element={<ProductForm />}/>
     </Routes>
   </Router>
   </>

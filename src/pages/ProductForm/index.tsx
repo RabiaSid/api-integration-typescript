@@ -2,31 +2,58 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Button from  "../../components/button"
+import { useNavigate, useParams } from "react-router-dom";
+import Button from "../../components/button";
 import Form from "../../components/form";
 
 export default function ProductForm() {
-  // const navigate = useNavigate();
-  // const [post, setPost] = useState<any>([]);
+  const params = useParams();
+  const navigate = useNavigate();
+  const [post, setPost] = useState<any>({});
 
-  // const baseAPI = "https://jsonplaceholder.typicode.com/comments";
+  const baseAPI = "https://jsonplaceholder.typicode.com/comments";
 
-  // const getPost = () => {
-  //   axios
-  //     .get(`${baseAPI}`)
-  //     .then((res) => {
-  //       setPost([...res.data]);
-  //       console.log([...res.data]);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  // target single post
+  const getPostById = () => {
+    axios(`${baseAPI}/${params.id}`)
+      .then((res) => {
+        console.log({ ...res.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  // useEffect(() => {
-  //   getPost();
-  // }, []);
+  // new post
+  const newPost = () => {
+    post.userId = 501;
+    axios
+      .post(baseAPI, post)
+      .then((res) => {
+        // setPost({ ...res.data });
+        console.log("Add New Post Successfully", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // new edit
+  const editPost = () => {
+    axios
+      .put(`${baseAPI}/${params.id}`, post)
+      .then((res) => {
+        setPost({ ...res.data });
+        // console.log("Add New Post Successfully", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    getPostById();
+  }, []);
 
   return (
     <Box
@@ -34,18 +61,39 @@ export default function ProductForm() {
       justifyContent="center"
     >
       <Grid container justifyContent="center" spacing={2}>
-          <Grid
-            item
-            xs={11}
-            sm={6}
-            md={4}
-            lg={3}
-            sx={{ padding: "5px", marginY: "5px" }}
-          >
-            <Form></Form>
-          </Grid>
+        <Grid
+          item
+          xs={11}
+          sm={6}
+          md={4}
+          lg={3}
+          sx={{ padding: "5px", marginY: "5px" }}
+        >
+          <Form
+            valueName={post.name}
+            onChangeName={(e) => setPost({ ...post, title: e.target.value })}
+            valueEmail={post.email}
+            onChangeEmail={(e) => setPost({ ...post, title: e.target.value })}
+            valueBody={post.body}
+            onChangeBody={(e) => setPost({ ...post, title: e.target.value })}
+          />
+          {params.id ? (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={editPost}
+              label="Update"
+            />
+          ) : (
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={newPost}
+              label="Submit"
+            />
+          )}
+        </Grid>
       </Grid>
     </Box>
   );
 }
-

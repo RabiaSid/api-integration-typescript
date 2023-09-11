@@ -24,6 +24,8 @@ export default function AppProduct() {
       });
   };
 
+  
+
   useEffect(() => {
     getPost();
   }, []);
@@ -60,7 +62,12 @@ export default function AppProduct() {
             sx={{ padding: "5px", marginY: "5px" }}
             key={i}
           >
-            <CustomizedCard name={x.name} email={x.email} body={x.body} />
+            <CustomizedCard name={x.name} email={x.email} body={x.body}
+            onEditClick={() => {
+              navigate(`product-form/${x.id}`)}
+            } 
+            // onEditClick={updatepost} 
+            />
           </Grid>
         ))}
       </Grid>
