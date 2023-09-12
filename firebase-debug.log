@@ -1,0 +1,142 @@
+[debug] [2023-09-11T13:45:09.713Z] ----------------------------------------------------------------------
+[debug] [2023-09-11T13:45:09.716Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rabia\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-09-11T13:45:09.716Z] CLI Version:   11.19.0
+[debug] [2023-09-11T13:45:09.717Z] Platform:      win32
+[debug] [2023-09-11T13:45:09.717Z] Node Version:  v16.19.0
+[debug] [2023-09-11T13:45:09.718Z] Time:          Mon Sep 11 2023 18:45:09 GMT+0500 (Pakistan Standard Time)
+[debug] [2023-09-11T13:45:09.718Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-09-11T13:45:09.818Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-09-11T13:45:09.819Z] > authorizing via signed-in user (rabiasid984@gmail.com)
+[debug] [2023-09-11T13:45:09.819Z] [iam] checking project api-integration-typescript for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-09-11T13:45:09.822Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/api-integration-typescript:testIamPermissions [none]
+[debug] [2023-09-11T13:45:09.822Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/api-integration-typescript:testIamPermissions x-goog-quota-user=projects/api-integration-typescript
+[debug] [2023-09-11T13:45:09.822Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/api-integration-typescript:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-09-11T13:45:21.729Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/api-integration-typescript:testIamPermissions
+[debug] [2023-09-11T13:45:21.733Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/api-integration-typescript [none]
+[debug] [2023-09-11T13:45:29.025Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/api-integration-typescript 200
+[debug] [2023-09-11T13:45:29.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/api-integration-typescript {"projectId":"api-integration-typescript","projectNumber":"940204075857","displayName":"api-integration-typescript","name":"projects/api-integration-typescript","resources":{"hostingSite":"api-integration-typescript"},"state":"ACTIVE","etag":"1_3b89f6eb-ad05-4087-9f30-4050082360e8"}
+[info] 
+[info] === Deploying to 'api-integration-typescript'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-09-11T13:45:29.050Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions [none]
+[debug] [2023-09-11T13:45:29.050Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-09-11T13:45:36.244Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions 200
+[debug] [2023-09-11T13:45:36.245Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions {"name":"projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[api-integration-typescript]: beginning deploy... 
+[info] i  hosting[api-integration-typescript]: found 14 files in build 
+[debug] [2023-09-11T13:45:36.274Z] [hosting] uploading with 200 concurrency
+[debug] [2023-09-11T13:45:36.276Z] [hosting] hash cache [YnVpbGQ] not populated
+[debug] [2023-09-11T13:45:36.579Z] [hosting] hash cache [YnVpbGQ] stored for 14 files
+[debug] [2023-09-11T13:45:36.579Z] [hosting][hash queue][FINAL] {"max":290,"min":22,"avg":44.285714285714285,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":301}
+[debug] [2023-09-11T13:45:36.580Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee:populateFiles [none]
+[debug] [2023-09-11T13:45:36.580Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee:populateFiles {"files":{"/asset-manifest.json":"8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde","/index.html":"04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4","/logo512.png":"ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","/logo192.png":"3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","/static/css/main.e6c13ad2.css":"ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041","/static/css/main.e6c13ad2.css.map":"1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e","/static/js/787.e3b21a3e.chunk.js":"51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f","/static/js/787.e3b21a3e.chunk.js.map":"20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124","/static/js/main.4e98ae89.js.LICENSE.txt":"b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5","/favicon.ico":"eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","/manifest.json":"aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","/robots.txt":"bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","/static/js/main.4e98ae89.js":"3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2","/static/js/main.4e98ae89.js.map":"15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e"}}
+[debug] [2023-09-11T13:45:38.177Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee:populateFiles 200
+[debug] [2023-09-11T13:45:38.177Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee:populateFiles {"uploadRequiredHashes":["04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4","ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331","3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2","aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a","1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e","20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124","bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49","ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041","b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5","eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9","15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e","3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b","51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f","8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files"}
+[debug] [2023-09-11T13:45:38.181Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4 [none]
+[debug] [2023-09-11T13:45:38.181Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4 [stream]
+[debug] [2023-09-11T13:45:38.183Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331 [none]
+[debug] [2023-09-11T13:45:38.183Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331 [stream]
+[debug] [2023-09-11T13:45:38.184Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2 [none]
+[debug] [2023-09-11T13:45:38.184Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2 [stream]
+[debug] [2023-09-11T13:45:38.185Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [none]
+[debug] [2023-09-11T13:45:38.186Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [stream]
+[debug] [2023-09-11T13:45:38.188Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e [none]
+[debug] [2023-09-11T13:45:38.188Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e [stream]
+[debug] [2023-09-11T13:45:38.190Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124 [none]
+[debug] [2023-09-11T13:45:38.190Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124 [stream]
+[debug] [2023-09-11T13:45:38.191Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [none]
+[debug] [2023-09-11T13:45:38.191Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [stream]
+[debug] [2023-09-11T13:45:38.192Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041 [none]
+[debug] [2023-09-11T13:45:38.193Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041 [stream]
+[debug] [2023-09-11T13:45:38.194Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5 [none]
+[debug] [2023-09-11T13:45:38.194Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5 [stream]
+[debug] [2023-09-11T13:45:38.196Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [none]
+[debug] [2023-09-11T13:45:38.196Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [stream]
+[debug] [2023-09-11T13:45:38.197Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e [none]
+[debug] [2023-09-11T13:45:38.197Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e [stream]
+[debug] [2023-09-11T13:45:38.198Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b [none]
+[debug] [2023-09-11T13:45:38.198Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b [stream]
+[debug] [2023-09-11T13:45:38.199Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f [none]
+[debug] [2023-09-11T13:45:38.199Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f [stream]
+[debug] [2023-09-11T13:45:38.203Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde [none]
+[debug] [2023-09-11T13:45:38.203Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde [stream]
+[debug] [2023-09-11T13:45:38.204Z] [hosting][populate queue][FINAL] {"max":1604,"min":1604,"avg":1604,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1627}
+[debug] [2023-09-11T13:45:38.205Z] [hosting] uploads queued: 14
+[debug] [2023-09-11T13:45:40.002Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 200
+[debug] [2023-09-11T13:45:40.002Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/eae62e993eb980ec8a25058c39d5a51feab118bd2100c4deebb2a9c158ec11f9 [stream]
+[debug] [2023-09-11T13:45:40.016Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5 200
+[debug] [2023-09-11T13:45:40.016Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/b0be41f89f951ab378727d8fc7b91c3d379514a74a64dd15630dc4b07c4fbfc5 [stream]
+[debug] [2023-09-11T13:45:40.019Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041 200
+[debug] [2023-09-11T13:45:40.020Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ef937e2ba3117d7a3c160149ccc607065f051b0c65cebc905b0a3c1351275041 [stream]
+[debug] [2023-09-11T13:45:40.023Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331 200
+[debug] [2023-09-11T13:45:40.024Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/ee7e2f3fdb8209c4b6fd7bef6ba50d1b9dba30a25bb5c3126df057e1cb6f5331 [stream]
+[debug] [2023-09-11T13:45:40.028Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b 200
+[debug] [2023-09-11T13:45:40.028Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3ee59515172ee198f3be375979df15ac5345183e656720a381b8872b2a39dc8b [stream]
+[debug] [2023-09-11T13:45:40.032Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4 200
+[debug] [2023-09-11T13:45:40.033Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/04832fcb723b2235d95314029bc201ea4c5b49fc4385ce52168699697a1c3ec4 [stream]
+[debug] [2023-09-11T13:45:40.037Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a 200
+[debug] [2023-09-11T13:45:40.037Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/aff3449bdc238776f5d6d967f19ec491b36aed5fb7f23ccff6500736fd58494a [stream]
+[debug] [2023-09-11T13:45:40.044Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e 200
+[debug] [2023-09-11T13:45:40.045Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/1604e85c49c02020348a820a79feae7f2375d77712e065294efc255e6cad329e [stream]
+[debug] [2023-09-11T13:45:40.097Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124 200
+[debug] [2023-09-11T13:45:40.097Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/20c0ba395c183a6afd4df26efc222bf82ddf79b2de60ed65fd126c97b2c82124 [stream]
+[debug] [2023-09-11T13:45:40.126Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f 200
+[debug] [2023-09-11T13:45:40.126Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/51fb6c8f64d36789eed38156f35170038dc8d20e550d4bbdd47758778fff3d5f [stream]
+[debug] [2023-09-11T13:45:40.156Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde 200
+[debug] [2023-09-11T13:45:40.157Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/8f3d82c7d592f357119b66734fd07475962cb46e83f16e7dc2d8142dadf82bde [stream]
+[debug] [2023-09-11T13:45:40.381Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2 200
+[debug] [2023-09-11T13:45:40.381Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/3c10680b0a8422fdef54618348932fe32b950914c4040117a36e2cbfb9e3e9f2 [stream]
+[debug] [2023-09-11T13:45:40.393Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 200
+[debug] [2023-09-11T13:45:40.393Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/bfe106a3fb878dc83461c86818bf74fc1bdc7f28538ba613cd3e775516ce8b49 [stream]
+[debug] [2023-09-11T13:45:40.785Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e 200
+[debug] [2023-09-11T13:45:40.785Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee/files/15a158a38ffeba243a8762dcdc636fd07d43d11293978e912968cd96b65e9c6e [stream]
+[debug] [2023-09-11T13:45:40.786Z] [hosting][upload queue][FINAL] {"max":2605,"min":1823,"avg":1974.2142857142858,"active":0,"complete":14,"success":14,"errored":0,"retried":0,"total":14,"elapsed":2609}
+[info] +  hosting[api-integration-typescript]: file upload complete 
+[debug] [2023-09-11T13:45:40.789Z] [hosting] deploy completed after 4537ms
+[debug] [2023-09-11T13:45:40.796Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "api-integration-typescript"
+    },
+    "version": "projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee"
+  }
+]
+[info] i  hosting[api-integration-typescript]: finalizing version... 
+[debug] [2023-09-11T13:45:40.808Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee updateMask=status%2Cconfig
+[debug] [2023-09-11T13:45:40.808Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2023-09-11T13:45:42.357Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee 200
+[debug] [2023-09-11T13:45:42.358Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee {"name":"projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-09-11T13:45:37.395924Z","createUser":{"email":"rabiasid984@gmail.com"},"finalizeTime":"2023-09-11T13:45:43.953134Z","finalizeUser":{"email":"rabiasid984@gmail.com"}}
+[debug] [2023-09-11T13:45:42.358Z] [hosting] finalized version for api-integration-typescript:[object Object]
+[info] +  hosting[api-integration-typescript]: version finalized 
+[info] i  hosting[api-integration-typescript]: releasing new version... 
+[debug] [2023-09-11T13:45:42.365Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/channels/live/releases versionName=projects%2F940204075857%2Fsites%2Fapi-integration-typescript%2Fversions%2Fa1ecb6b3ef3c15ee
+[debug] [2023-09-11T13:45:42.366Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/channels/live/releases {}
+[debug] [2023-09-11T13:45:43.999Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/channels/live/releases 200
+[debug] [2023-09-11T13:45:43.999Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/api-integration-typescript/channels/live/releases {"name":"projects/940204075857/sites/api-integration-typescript/channels/live/releases/1694439945016000","version":{"name":"projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-09-11T13:45:37.395924Z","createUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"},"finalizeTime":"2023-09-11T13:45:43.953134Z","finalizeUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"}},"type":"DEPLOY","releaseTime":"2023-09-11T13:45:45.016Z","releaseUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"}}
+[debug] [2023-09-11T13:45:43.999Z] [hosting] release: {"name":"projects/940204075857/sites/api-integration-typescript/channels/live/releases/1694439945016000","version":{"name":"projects/940204075857/sites/api-integration-typescript/versions/a1ecb6b3ef3c15ee","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-09-11T13:45:37.395924Z","createUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"},"finalizeTime":"2023-09-11T13:45:43.953134Z","finalizeUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"}},"type":"DEPLOY","releaseTime":"2023-09-11T13:45:45.016Z","releaseUser":{"email":"rabiasid984@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocKFzTyuF4s2cTYZLbVtZ3vaki-Oo5GQOco3ALVKUB2JzD5v"}}
+[info] +  hosting[api-integration-typescript]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/api-integration-typescript/overview
+[info] Hosting URL: https://api-integration-typescript.web.app
+[debug] [2023-09-11T13:45:49.644Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\rabia\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
